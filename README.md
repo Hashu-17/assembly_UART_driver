@@ -18,8 +18,6 @@ This guide walks through **every line** of the code to get a full understanding 
 .thumb
 ````
 
-### Explanation:
-
 * Tells the assembler to use **unified syntax** for both ARM and Thumb.
 * Targeting **Cortex-M4 CPU**.
 * `.thumb` ensures the output is in **Thumb instruction set**, used by most STM32 chips.
@@ -31,13 +29,9 @@ This guide walks through **every line** of the code to get a full understanding 
 .global UART_SendByte
 ```
 
-### Explanation:
-
 * Expose `UART_Init` and `UART_SendByte` functions to C files or linker.
 
 
-
-### Define Peripheral Base Addresses and Offsets
 
 ```asm
 .equ RCC_BASE,     0x40021000
@@ -53,7 +47,6 @@ This guide walks through **every line** of the code to get a full understanding 
 .equ USART2_TDR,   USART2_BASE + 0x28
 ```
 
-### Explanation:
 
 * These are **memory-mapped register addresses** from the reference manual.
 * `MODER`, `AFRL`, etc. control GPIO and USART configuration.
@@ -61,7 +54,6 @@ This guide walks through **every line** of the code to get a full understanding 
 
 ---
 
-## UART_Init
 
 ```asm
 UART_Init:
